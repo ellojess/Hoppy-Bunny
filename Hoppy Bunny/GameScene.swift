@@ -10,14 +10,19 @@ import SpriteKit
 class GameScene: SKScene {
     
     var hero: SKSpriteNode!
+    var scrollLayer: SKNode!
     var sinceTouch : CFTimeInterval = 0
     let fixedDelta: CFTimeInterval = 1.0 / 60.0 /* 60 FPS */
+    let scrollSpeed: CGFloat = 100
     
     override func didMove(to view: SKView) {
         /* Setup your scene here */
         
         /* Recursive node search for 'hero' (child of referenced node) */
         hero = self.childNode(withName: "//hero") as! SKSpriteNode
+        
+        /* Set reference to scroll layer node */
+        scrollLayer = self.childNode(withName: "scrollLayer")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -56,6 +61,14 @@ class GameScene: SKScene {
         
         /* Update last touch timer */
         sinceTouch += fixedDelta
+        
+        /* Process world scrolling */
+        scrollWorld()
+    }
+    
+    func scrollWorld() {
+        /* Scroll World */
+        scrollLayer.position.x -= scrollSpeed * CGFloat(fixedDelta)
     }
     
     
