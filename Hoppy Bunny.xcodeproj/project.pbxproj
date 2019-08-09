@@ -16,6 +16,7 @@
 		C09A617622F1009100538385 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C09A617522F1009100538385 /* Assets.xcassets */; };
 		C09A617922F1009100538385 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C09A617722F1009100538385 /* LaunchScreen.storyboard */; };
 		C09A618122F25A0100538385 /* Hero.sks in Resources */ = {isa = PBXBuildFile; fileRef = C09A618022F25A0100538385 /* Hero.sks */; };
+		C0DDE2CA22FD00F900F87255 /* Obstacle.sks in Resources */ = {isa = PBXBuildFile; fileRef = C0DDE2C922FD00F900F87255 /* Obstacle.sks */; };
 		C0EED90922F3C9DA00D9ADF3 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EED90822F3C9DA00D9ADF3 /* CGFloat+Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		C09A617822F1009100538385 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C09A617A22F1009100538385 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C09A618022F25A0100538385 /* Hero.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hero.sks; sourceTree = "<group>"; };
+		C0DDE2C922FD00F900F87255 /* Obstacle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Obstacle.sks; sourceTree = "<group>"; };
 		C0EED90822F3C9DA00D9ADF3 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +68,7 @@
 			children = (
 				C09A616822F1008F00538385 /* AppDelegate.swift */,
 				C09A616A22F1008F00538385 /* GameScene.sks */,
+				C0DDE2C922FD00F900F87255 /* Obstacle.sks */,
 				C09A618022F25A0100538385 /* Hero.sks */,
 				C09A616C22F1008F00538385 /* Actions.sks */,
 				C09A616E22F1008F00538385 /* GameScene.swift */,
@@ -143,6 +146,7 @@
 				C09A618122F25A0100538385 /* Hero.sks in Resources */,
 				C09A617922F1009100538385 /* LaunchScreen.storyboard in Resources */,
 				C09A616D22F1008F00538385 /* Actions.sks in Resources */,
+				C0DDE2CA22FD00F900F87255 /* Obstacle.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
