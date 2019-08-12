@@ -12,6 +12,9 @@ class GameScene: SKScene {
     var hero: SKSpriteNode!
     var scrollLayer: SKNode!
     var sinceTouch : CFTimeInterval = 0
+    var spawnTimer: CFTimeInterval = 0
+    var obstacleSource: SKNode!
+    var obstacleLayer: SKNode!
     let fixedDelta: CFTimeInterval = 1.0 / 60.0 /* 60 FPS */
     let scrollSpeed: CGFloat = 100
     
@@ -23,6 +26,12 @@ class GameScene: SKScene {
         
         /* Set reference to scroll layer node */
         scrollLayer = self.childNode(withName: "scrollLayer")
+        
+        /* Set reference to obstacle Source node */
+        obstacleSource = self.childNode(withName: "obstacle")
+        
+        /* Set reference to obstacle layer node */
+        obstacleLayer = self.childNode(withName: "obstacleLayer")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
