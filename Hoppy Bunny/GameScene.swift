@@ -76,6 +76,8 @@ class GameScene: SKScene {
         
         /* Process obstacles */
         updateObstacles()
+        
+        spawnTimer+=fixedDelta
     }
     
     func scrollWorld() {
@@ -121,6 +123,22 @@ class GameScene: SKScene {
             
         }
         
+        /* Time to add a new obstacle? */
+        if spawnTimer >= 1.5 {
+            
+            /* Create a new obstacle by copying the source obstacle */
+            let newObstacle = obstacleSource.copy() as! SKNode
+            obstacleLayer.addChild(newObstacle)
+            
+            /* Generate new obstacle position, start just outside screen and with a random y value */
+            let randomPosition = CGPoint(x: 352, y: CGFloat.random(min: 234, max: 382))
+            
+            /* Convert new node position back to obstacle layer space */
+            newObstacle.position = self.convert(randomPosition, to: obstacleLayer)
+            
+            // Reset spawn timer
+            spawnTimer = 0
+        }
     }
     
     
