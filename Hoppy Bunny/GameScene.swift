@@ -73,6 +73,9 @@ class GameScene: SKScene {
         
         /* Process world scrolling */
         scrollWorld()
+        
+        /* Process obstacles */
+        updateObstacles()
     }
     
     func scrollWorld() {
@@ -95,6 +98,29 @@ class GameScene: SKScene {
                 ground.position = self.convert(newPosition, to: scrollLayer)
             }
         }
+    }
+    
+    func updateObstacles() {
+        /* Update Obstacles */
+        
+        obstacleLayer.position.x -= scrollSpeed * CGFloat(fixedDelta)
+        
+        /* Loop through obstacle layer nodes */
+        for obstacle in obstacleLayer.children as! [SKReferenceNode] {
+            
+            /* Get obstacle node position, convert node position to scene space */
+            let obstaclePosition = obstacleLayer.convert(obstacle.position, to: self)
+            
+            /* Check if obstacle has left the scene */
+            if obstaclePosition.x <= -26 {
+                // 26 is one half the width of an obstacle
+                
+                /* Remove obstacle node from obstacle layer */
+                obstacle.removeFromParent()
+            }
+            
+        }
+        
     }
     
     
